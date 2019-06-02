@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C1AAFC0D-A70F-43CF-A05B-D13FBEC7A63E}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Projeto.Presentation</RootNamespace>
-    <AssemblyName>Projeto.Presentation</AssemblyName>
+    <ProjectGuid>{B8DA3185-6310-4442-86F3-DE8B691D3287}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Projeto.Repository.Contracts</RootNamespace>
+    <AssemblyName>Projeto.Repository.Contracts</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,32 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="IPessoaRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Projeto.Business.Contracts\Projeto.Business.Contracts.csproj">
-      <Project>{2f7d7461-14a0-43e3-9b22-741f4db55e89}</Project>
-      <Name>Projeto.Business.Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Projeto.Business.Impl\Projeto.Business.Impl.csproj">
-      <Project>{9c6a348a-3f85-40a1-9c44-1c53a0af6916}</Project>
-      <Name>Projeto.Business.Impl</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Projeto.Entities\Projeto.Entities.csproj">
       <Project>{3d5f9f06-9db6-43fd-b909-f0a5b0e0e2b3}</Project>
       <Name>Projeto.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Projeto.Repository.Contracts\Projeto.Repository.Contracts.csproj">
-      <Project>{b8da3185-6310-4442-86f3-de8b691d3287}</Project>
-      <Name>Projeto.Repository.Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Projeto.Repository.Impl\Projeto.Repository.Impl.csproj">
-      <Project>{2f0910c7-dad7-4121-8894-a52daba09340}</Project>
-      <Name>Projeto.Repository.Impl</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

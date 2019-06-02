@@ -1,0 +1,16 @@
+CREATE TABLE Pessoa(
+	PessoaId			integer			identity(1,1),
+	Nome				nvarchar(50)	not null,
+	Email				nvarchar(50)	not null,
+	DataCadastro		datetime		not null,
+	PRIMARY KEY(PessoaId))
+
+CREATE TABLE Endereco(
+	EnderecoId			integer			identity(1,1),
+	Logradouro			nvarchar(150)	not null,
+	Cidade				nvarchar(50)	not null,
+	Estado				nvarchar(50)	not null,
+	Cep					nvarchar(15)	not null,
+	PessoaId			integer			not null unique,
+	PRIMARY KEY(EnderecoId),
+	FOREIGN KEY(PessoaId) REFERENCES Pessoa(PessoaId))
