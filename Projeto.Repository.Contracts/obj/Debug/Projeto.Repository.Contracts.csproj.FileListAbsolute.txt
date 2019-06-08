@@ -1,0 +1,9 @@
+C:\Projetos\src\ProjetoControleCliente\Projeto.Repository.Contracts\bin\Debug\Projeto.Repository.Contracts.dll
+C:\Projetos\src\ProjetoControleCliente\Projeto.Repository.Contracts\bin\Debug\Projeto.Repository.Contracts.pdb
+C:\Projetos\src\ProjetoControleCliente\Projeto.Repository.Contracts\bin\Debug\Projeto.Entities.dll
+C:\Projetos\src\ProjetoControleCliente\Projeto.Repository.Contracts\bin\Debug\Projeto.Entities.pdb
+C:\Projetos\src\ProjetoControleCliente\Projeto.Repository.Contracts\obj\Debug\Projeto.Repository.Contracts.csprojAssemblyReference.cache
+C:\Projetos\src\ProjetoControleCliente\Projeto.Repository.Contracts\obj\Debug\Projeto.Repository.Contracts.csproj.CoreCompileInputs.cache
+C:\Projetos\src\ProjetoControleCliente\Projeto.Repository.Contracts\obj\Debug\Projeto.Repository.Contracts.csproj.CopyComplete
+C:\Projetos\src\ProjetoControleCliente\Projeto.Repository.Contracts\obj\Debug\Projeto.Repository.Contracts.dll
+C:\Projetos\src\ProjetoControleCliente\Projeto.Repository.Contracts\obj\Debug\Projeto.Repository.Contracts.pdb

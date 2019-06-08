@@ -9,7 +9,7 @@ using Projeto.Repository.Contracts;
 
 namespace Projeto.Business.Impl
 {
-    public class PessoaBusiness : Contracts.PessoaBusiness
+    public class PessoaBusiness : IPessoaBusiness
     {
         private IPessoaRepository repository;
 
@@ -18,7 +18,7 @@ namespace Projeto.Business.Impl
             this.repository = repository;
         }
 
-        public void Cadastar()
+        public void Cadastrar()
         {
             try
             {

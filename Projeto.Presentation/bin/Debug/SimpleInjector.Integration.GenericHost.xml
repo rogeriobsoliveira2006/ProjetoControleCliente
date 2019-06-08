@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SimpleInjector.Integration.GenericHost</name>
+    </assembly>
+    <members>
+        <member name="T:SimpleInjector.SimpleInjectorGenericHostExtensions">
+            <summary>
+            Extension methods for integrating Simple Injector with Generic Hosts.
+            </summary>
+        </member>
+        <member name="M:SimpleInjector.SimpleInjectorGenericHostExtensions.AddHostedService``1(SimpleInjector.Integration.ServiceCollection.SimpleInjectorAddOptions)">
+            <summary>
+            Registers the given <typeparamref name="THostedService"/> in the Container as Singleton and
+            adds it to the host's pipeline of hosted services.
+            </summary>
+            <typeparam name="THostedService">An <see cref="T:Microsoft.Extensions.Hosting.IHostedService"/> to register.</typeparam>
+            <param name="options">The options.</param>
+            <returns>The <paramref name="options"/>.</returns>
+        </member>
+        <member name="M:SimpleInjector.SimpleInjectorGenericHostExtensions.UseSimpleInjector(Microsoft.Extensions.Hosting.IHost,SimpleInjector.Container,System.Action{SimpleInjector.SimpleInjectorUseOptions})">
+            <summary>
+            Finalizes the configuration of Simple Injector on top of <see cref="T:Microsoft.Extensions.Hosting.IHost"/>.
+            Ensures framework components can be injected into Simple Injector-resolved components, unless
+            <see cref="P:SimpleInjector.SimpleInjectorUseOptions.AutoCrossWireFrameworkComponents"/> is set to <c>false</c>
+            using the <paramref name="setupAction"/>.
+            </summary>
+            <param name="host">The application's <see cref="T:Microsoft.Extensions.Hosting.IHost"/>.</param>
+            <param name="container">The application's <see cref="T:SimpleInjector.Container"/> instance.</param>
+            <param name="setupAction">An optional setup action.</param>
+            <returns>The supplied <paramref name="host"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="host"/> or
+            <paramref name="container"/> are null references.</exception>
+        </member>
+    </members>
+</doc>

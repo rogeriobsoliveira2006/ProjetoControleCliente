@@ -1,0 +1,11 @@
+C:\Projetos\src\ProjetoControleCliente\Projeto.Repository.Impl\bin\Debug\Projeto.Repository.Impl.dll
+C:\Projetos\src\ProjetoControleCliente\Projeto.Repository.Impl\bin\Debug\Projeto.Repository.Impl.pdb
+C:\Projetos\src\ProjetoControleCliente\Projeto.Repository.Impl\bin\Debug\Projeto.Entities.dll
+C:\Projetos\src\ProjetoControleCliente\Projeto.Repository.Impl\bin\Debug\Projeto.Repository.Contracts.dll
+C:\Projetos\src\ProjetoControleCliente\Projeto.Repository.Impl\bin\Debug\Projeto.Entities.pdb
+C:\Projetos\src\ProjetoControleCliente\Projeto.Repository.Impl\bin\Debug\Projeto.Repository.Contracts.pdb
+C:\Projetos\src\ProjetoControleCliente\Projeto.Repository.Impl\obj\Debug\Projeto.Repository.Impl.csprojAssemblyReference.cache
+C:\Projetos\src\ProjetoControleCliente\Projeto.Repository.Impl\obj\Debug\Projeto.Repository.Impl.csproj.CoreCompileInputs.cache
+C:\Projetos\src\ProjetoControleCliente\Projeto.Repository.Impl\obj\Debug\Projeto.Repository.Impl.csproj.CopyComplete
+C:\Projetos\src\ProjetoControleCliente\Projeto.Repository.Impl\obj\Debug\Projeto.Repository.Impl.dll
+C:\Projetos\src\ProjetoControleCliente\Projeto.Repository.Impl\obj\Debug\Projeto.Repository.Impl.pdb

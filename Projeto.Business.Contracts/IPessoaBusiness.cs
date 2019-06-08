@@ -7,9 +7,9 @@ using Projeto.Entities;
 
 namespace Projeto.Business.Contracts
 {
-    public interface PessoaBusiness
+    public interface IPessoaBusiness
     {
-        void Cadastar();
+        void Cadastrar();
         void Atualizar();
         void Excluir();
         List<Pessoa> ConsultarTodos();
