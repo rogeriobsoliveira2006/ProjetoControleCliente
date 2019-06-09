@@ -12,7 +12,7 @@ namespace Projeto.Business.Contracts
         void Cadastrar();
         void Atualizar();
         void Excluir();
-        List<Pessoa> ConsultarTodos();
-        Pessoa ConsultarPorId();
+        void ConsultarTodos();
+        void ConsultarPorId();
     }
 }

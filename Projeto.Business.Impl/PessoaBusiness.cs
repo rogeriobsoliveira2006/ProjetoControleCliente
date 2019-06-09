@@ -121,14 +121,60 @@ namespace Projeto.Business.Impl
             }
         }
 
-        public Pessoa ConsultarPorId()
+        public void ConsultarPorId()
         {
-            throw new NotImplementedException();
+            try
+            {
+                Console.WriteLine("\n - CONSULTA DE PESSOAS POR ID - \n");
+
+                Console.Write("INFORME O ID.........: ");
+                int idPessoa = int.Parse(Console.ReadLine());
+
+                Pessoa p = repository.FindById(idPessoa);
+
+                if (p != null)
+                {
+                    Console.WriteLine("Pessoa -> " + p.ToString());
+
+                    if (p.Endereco != null)
+                    {
+                        Console.WriteLine("\tEndereço -> " + p.Endereco.ToString());
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("\nPessoa não encontrado!!!");
+                }
+            }
+            catch (Exception ex)
+            {
+                //imprimir mensagem de erro...
+                Console.WriteLine("ERRO: " + ex.Message);
+            }
         }
 
-        public List<Pessoa> ConsultarTodos()
+        //metodo para consultar todos...
+        public void ConsultarTodos()
         {
-            throw new NotImplementedException();
+            try
+            {
+                Console.WriteLine("\n - CONSULTA DE PESSOAS - \n");
+
+                foreach (Pessoa p in repository.FindAll())
+                {
+                    Console.WriteLine("Pessoa -> " + p.ToString());
+
+                    if (p.Endereco != null)
+                    {
+                        Console.WriteLine("\tEndereço -> " + p.Endereco.ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                //imprimir mensagem de erro...
+                Console.WriteLine("ERRO: " + ex.Message);
+            }
         }
     }
 }

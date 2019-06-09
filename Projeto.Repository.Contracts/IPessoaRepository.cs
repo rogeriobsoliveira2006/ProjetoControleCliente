@@ -13,6 +13,6 @@ namespace Projeto.Repository.Contracts
         void Update(Pessoa p, Endereco e);
         void Delete(int id);
         List<Pessoa> FindAll();
-        Pessoa FindById(int id);
+        Pessoa FindById(int idPessoa);
     }
 }

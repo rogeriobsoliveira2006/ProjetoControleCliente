@@ -134,12 +134,84 @@ namespace Projeto.Repository.Impl
 
         public List<Pessoa> FindAll()
         {
-            throw new NotImplementedException();
+            AbrirConexao();
+
+            string queryConsulta = "SELECT * FROM PESSOA p LEFT JOIN ENDERECO e ON p.PessoaId = e.PessoaId";
+
+            cmd = new SqlCommand(queryConsulta, con);
+            dr = cmd.ExecuteReader();
+
+            List<Pessoa> listaPessoa = null;
+
+            if (dr.HasRows)
+            {
+                listaPessoa = new List<Pessoa>();
+                //varrer cada registro obtido na consulta...
+                while (dr.Read())
+                {
+                    Pessoa p = new Pessoa();
+                    p.PessoaId = Convert.ToInt32(dr["PessoaId"]);
+                    p.AddNome(Convert.ToString(dr["Nome"]));
+                    p.AddEmail(Convert.ToString(dr["Email"]));
+                    p.AddDataCadastro(Convert.ToDateTime(dr["DataCadastro"]));
+
+                    //verificar se pessoa contem endereço...
+                    if (dr["EnderecoId"] != DBNull.Value)
+                    {
+                        p.Endereco = new Endereco();
+                        p.Endereco.EnderecoId = Convert.ToInt32(dr["EnderecoId"]);
+                        p.Endereco.AddLogradouro(Convert.ToString(dr["Logradouro"]));
+                        p.Endereco.AddCidade(Convert.ToString(dr["Cidade"]));
+                        p.Endereco.AddEstado(Convert.ToString(dr["Estado"]));
+                        p.Endereco.AddCEP(Convert.ToString(dr["Cep"]));
+                    }
+                    listaPessoa.Add(p);
+                }
+            }
+
+            FecharConexao();
+            return listaPessoa;
         }
 
-        public Pessoa FindById(int id)
+        public Pessoa FindById(int idPessoa)
         {
-            throw new NotImplementedException();
+            AbrirConexao();
+
+            string queryConsulta = "SELECT * FROM PESSOA p LEFT JOIN ENDERECO e ON p.PessoaId = e.PessoaId "
+                    +"WHERE p.PessoaId = @PessoaId";
+
+            cmd = new SqlCommand(queryConsulta, con);
+            cmd.Parameters.AddWithValue("@PessoaId", idPessoa);
+            dr = cmd.ExecuteReader();
+
+            Pessoa p = null;
+
+            if (dr.HasRows)
+            {
+                p = new Pessoa();
+
+                if (dr.Read())
+                {
+                    p.PessoaId = Convert.ToInt32(dr["PessoaId"]);
+                    p.AddNome(Convert.ToString(dr["Nome"]));
+                    p.AddEmail(Convert.ToString(dr["Email"]));
+                    p.AddDataCadastro(Convert.ToDateTime(dr["DataCadastro"]));
+
+                    //verificar se pessoa contem endereço...
+                    if (dr["EnderecoId"] != DBNull.Value)
+                    {
+                        p.Endereco = new Endereco();
+                        p.Endereco.EnderecoId = Convert.ToInt32(dr["EnderecoId"]);
+                        p.Endereco.AddLogradouro(Convert.ToString(dr["Logradouro"]));
+                        p.Endereco.AddCidade(Convert.ToString(dr["Cidade"]));
+                        p.Endereco.AddEstado(Convert.ToString(dr["Estado"]));
+                        p.Endereco.AddCEP(Convert.ToString(dr["Cep"]));
+                    }
+                }
+            }
+
+            FecharConexao();
+            return p;
         }
     }
 }

@@ -59,11 +59,19 @@ namespace Projeto.Presentation
                         business.Excluir();
                         break;
 
+                    case 4:
+                        business.ConsultarTodos();
+                        break;
+
+                    case 5:
+                        business.ConsultarPorId();
+                        break;
+
                     default:
                         Console.WriteLine("\nOPÇÃO INVÁLIDA!!!\n");
                         break;
                 }
-                Console.Write("Deseja continuar no programa [s] ou [n]: ");
+                Console.Write("\nDeseja continuar no programa [s] ou [n]: ");
             } while (char.ToLower(char.Parse(Console.ReadLine())).Equals('s'));
 
             //Console.ReadKey(); //pausar...
