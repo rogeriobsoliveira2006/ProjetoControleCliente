@@ -61,7 +61,44 @@ namespace Projeto.Business.Impl
 
         public void Atualizar()
         {
-            throw new NotImplementedException();
+            try
+            {
+                Console.WriteLine("\n - ATUALIZAR DE PESSOA - \n");
+                Pessoa p = new Pessoa();
+
+                Console.Write("INFORME O ID.........: ");
+                p.PessoaId = int.Parse(Console.ReadLine());
+
+                Console.Write("INFORME O NOME.......: ");
+                p.AddNome(Console.ReadLine());
+
+                Console.Write("INFORME O EMAIL......: ");
+                p.AddEmail(Console.ReadLine());
+
+
+                Endereco e = new Endereco();
+
+                Console.Write("INFORME O LOGRADOURO.: ");
+                e.AddLogradouro(Console.ReadLine());
+
+                Console.Write("INFORME A CIDADE.....: ");
+                e.AddCidade(Console.ReadLine());
+
+                Console.Write("INFORME O ESTADO.....: ");
+                e.AddEstado(Console.ReadLine());
+
+                Console.Write("INFORME O CEP........: ");
+                e.AddCEP(Console.ReadLine());
+
+                repository.Update(p, e);
+
+                Console.WriteLine("\n Pessoa atualizado com sucesso !");
+            }
+            catch (Exception ex)
+            {
+                //imprimir mensagem de erro...
+                Console.WriteLine("ERRO: " + ex.Message);
+            }
         }
 
         public void Excluir()

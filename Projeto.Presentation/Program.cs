@@ -30,12 +30,37 @@ namespace Projeto.Presentation
         }
         static void Main(string[] args)
         {
-
             business = container.GetInstance<IPessoaBusiness>();
-            business.Cadastrar();
 
-            
-            Console.ReadKey();
+            do
+            {
+                Console.Clear();
+                Console.WriteLine("\n - PROJETO CONTROLE DE PESSOAS - \n");
+                Console.WriteLine("[1] - CADASTRAR PESSOA");
+                Console.WriteLine("[2] - ATUALIZAR PESSOA");
+                Console.WriteLine("[3] - EXCLUIR PESSOA");
+                Console.WriteLine("[4] - CONSULTAR TODOS");
+                Console.WriteLine("[5] - CONSULTAR POR ID");
+
+                Console.Write("\nInforme a opção desejada: ");
+                int opcao = int.Parse(Console.ReadLine());
+
+                switch (opcao)
+                {
+                    case 1:
+                        business.Cadastrar();
+                        break;
+                    case 2:
+                        business.Atualizar();
+                        break;
+                    default:
+                        Console.WriteLine("\nOPÇÃO INVÁLIDA!!!\n");
+                        break;
+                }
+                Console.Write("Deseja continuar no programa [s] ou [n]: ");
+            } while (char.ToLower(char.Parse(Console.ReadLine())).Equals('s'));
+
+            //Console.ReadKey(); //pausar...
         }
     }
 }
