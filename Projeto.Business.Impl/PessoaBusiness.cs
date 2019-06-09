@@ -49,7 +49,7 @@ namespace Projeto.Business.Impl
 
                 repository.Insert(p, e);
 
-                Console.WriteLine("\n Pessoa cadastrado com sucesso !");
+                Console.WriteLine($"\n Pessoa {p.Nome} | cadastrado com sucesso !\n");
             }
             catch (Exception ex)
             {
@@ -92,7 +92,7 @@ namespace Projeto.Business.Impl
 
                 repository.Update(p, e);
 
-                Console.WriteLine("\n Pessoa atualizado com sucesso !");
+                Console.WriteLine($"\n Pessoa {p.Nome} | atualizado com sucesso !\n");
             }
             catch (Exception ex)
             {
@@ -103,7 +103,22 @@ namespace Projeto.Business.Impl
 
         public void Excluir()
         {
-            throw new NotImplementedException();
+            try
+            {
+                Console.WriteLine("\n - EXCLUIR PESSOA - \n");
+
+                Console.Write("INFORME O ID.........: ");
+                int idPessoa = int.Parse(Console.ReadLine());
+
+                repository.Delete(idPessoa);
+
+                Console.WriteLine($"\n Pessoa exluído com sucesso !\n");
+            }
+            catch (Exception ex)
+            {
+                //imprimir mensagem de erro...
+                Console.WriteLine("ERRO: " + ex.Message);
+            }
         }
 
         public Pessoa ConsultarPorId()

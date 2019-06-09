@@ -50,9 +50,15 @@ namespace Projeto.Presentation
                     case 1:
                         business.Cadastrar();
                         break;
+
                     case 2:
                         business.Atualizar();
                         break;
+
+                    case 3:
+                        business.Excluir();
+                        break;
+
                     default:
                         Console.WriteLine("\nOPÇÃO INVÁLIDA!!!\n");
                         break;

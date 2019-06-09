@@ -103,9 +103,33 @@ namespace Projeto.Repository.Impl
             }
         }
 
-        public void Delete(int id)
+        public void Delete(int idPessoa)
         {
-            throw new NotImplementedException();
+            AbrirConexao();
+
+            string queryPessoa = "DELETE FROM PESSOA WHERE PessoaId = @PessoaId";
+
+            //abrir uma transação...
+            tr = con.BeginTransaction();
+
+            try
+            {
+                //excluindo pessoa...
+                cmd = new SqlCommand(queryPessoa, con, tr);
+                cmd.Parameters.AddWithValue("@PessoaId", idPessoa);
+                cmd.ExecuteNonQuery();
+
+                tr.Commit();
+            }
+            catch (Exception ex)
+            {
+                tr.Rollback();
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                FecharConexao();
+            }
         }
 
         public List<Pessoa> FindAll()
