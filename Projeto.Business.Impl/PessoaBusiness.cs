@@ -69,30 +69,38 @@ namespace Projeto.Business.Impl
                 Console.Write("INFORME O ID.........: ");
                 p.PessoaId = int.Parse(Console.ReadLine());
 
-                Console.Write("INFORME O NOME.......: ");
-                p.AddNome(Console.ReadLine());
+                Pessoa aux = repository.FindById(p.PessoaId);
+                if (aux != null)
+                {
+                    Console.Write("INFORME O NOME.......: ");
+                    p.AddNome(Console.ReadLine());
 
-                Console.Write("INFORME O EMAIL......: ");
-                p.AddEmail(Console.ReadLine());
+                    Console.Write("INFORME O EMAIL......: ");
+                    p.AddEmail(Console.ReadLine());
 
 
-                Endereco e = new Endereco();
+                    Endereco e = new Endereco();
 
-                Console.Write("INFORME O LOGRADOURO.: ");
-                e.AddLogradouro(Console.ReadLine());
+                    Console.Write("INFORME O LOGRADOURO.: ");
+                    e.AddLogradouro(Console.ReadLine());
 
-                Console.Write("INFORME A CIDADE.....: ");
-                e.AddCidade(Console.ReadLine());
+                    Console.Write("INFORME A CIDADE.....: ");
+                    e.AddCidade(Console.ReadLine());
 
-                Console.Write("INFORME O ESTADO.....: ");
-                e.AddEstado(Console.ReadLine());
+                    Console.Write("INFORME O ESTADO.....: ");
+                    e.AddEstado(Console.ReadLine());
 
-                Console.Write("INFORME O CEP........: ");
-                e.AddCEP(Console.ReadLine());
+                    Console.Write("INFORME O CEP........: ");
+                    e.AddCEP(Console.ReadLine());
 
-                repository.Update(p, e);
+                    repository.Update(p, e);
 
-                Console.WriteLine($"\n Pessoa {p.Nome} | atualizado com sucesso !\n");
+                    Console.WriteLine($"\n Pessoa {p.Nome} | atualizado com sucesso !\n");
+                }
+                else
+                {
+                    Console.WriteLine($"\n Pessoa não encontrado!!!\n");
+                }
             }
             catch (Exception ex)
             {
@@ -110,9 +118,17 @@ namespace Projeto.Business.Impl
                 Console.Write("INFORME O ID.........: ");
                 int idPessoa = int.Parse(Console.ReadLine());
 
-                repository.Delete(idPessoa);
+                Pessoa aux = repository.FindById(idPessoa);
+                if (aux != null)
+                {
+                    repository.Delete(idPessoa);
 
-                Console.WriteLine($"\n Pessoa exluído com sucesso !\n");
+                    Console.WriteLine($"\n Pessoa exluído com sucesso !\n");
+                }
+                else
+                {
+                    Console.WriteLine($"\n Pessoa não encontrado!!!\n");
+                }
             }
             catch (Exception ex)
             {
